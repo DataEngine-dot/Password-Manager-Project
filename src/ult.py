@@ -20,12 +20,13 @@ def retrieveSecret(sm_client,title):
             json.dump(passwords,file,indent=4)
 
         print(f"secrets is stored in secrets.json")
-        
+
     except botocore.exceptions.ClientError as err:
         print(f"Failed to retrieve secret: {err}")
     except (json.JSONDecodeError, KeyError) as err:
         print(f"Invalid secret format: {err}")
     except Exception as err:
         print(f"Unexpected error: {err}")
+        
 if __name__ == "__main__":
     pass
