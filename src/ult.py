@@ -2,6 +2,16 @@ import json
 import botocore.exceptions
 
 
+def listingSecrets(sm_client):
+    # returns a list of secrets
+    try:
+        response = sm_client.list_secrets()
+        return [secret["Name"] for secret in response["SecretList"]]
+    except botocore.exceptions.ClientError as err:
+        print(f"Failed to list secrets: {err}")
+        return []
+
+
 def creatingSecret(sm_client,name,userid,password):
     # creates a secret 
     secretValue = {
