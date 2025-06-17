@@ -1,6 +1,7 @@
 import json
 import botocore.exceptions
 
+
 def creatingSecret(sm_client,name,userid,password):
     # creates a secret 
     secretValue = {
@@ -27,6 +28,17 @@ def retrieveSecret(sm_client,title):
         print(f"Invalid secret format: {err}")
     except Exception as err:
         print(f"Unexpected error: {err}")
-        
+
+
+def deleteSecrets(sm_client,title):
+    # deletes the secret 
+    try:
+        return sm_client.delete_secret(SecretId=title)
+
+    except botocore.exceptions.clientError as err:
+        print(f"failed to delete secret: {err}")
+        return None
+
+
 if __name__ == "__main__":
     pass
