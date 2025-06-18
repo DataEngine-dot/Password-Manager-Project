@@ -5,7 +5,7 @@ from unittest.mock import Mock
 from botocore.exceptions import ClientError
 
 
-class TestCreateSecret():
+class TestRetrieveSecret():
     def test_listing_secrets(self):
         sm_client = Mock()
 
