@@ -45,7 +45,7 @@ def deleteSecrets(sm_client,title):
     try:
         return sm_client.delete_secret(SecretId=title)
 
-    except botocore.exceptions.clientError as err:
+    except botocore.exceptions.ClientError as err:
         print(f"failed to delete secret: {err}")
         return None
 
