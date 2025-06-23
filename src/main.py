@@ -14,7 +14,7 @@ if __name__ == "__main__":
                 userId = input("UserId: ")
                 password = input("Password: ")
                 response = creatingSecret(sm_client,secretIdentifier,userId,password)
-                print("Secret saved.")
+                print("> Secret saved.")
             elif action == "r":
                 recieve = input("> Specify secret to retrieve:\n> ")
                 try:
@@ -25,7 +25,7 @@ if __name__ == "__main__":
                 toDelete = input("> Specify secret to delete:\n> ")
                 try:
                     deleteSecrets(sm_client,toDelete)
-                    print(f">secret {toDelete} is deleted")
+                    print(f"> secret {toDelete} is deleted")
                 except Exception as err:
                     print(f"oops, something went wrong: {err}")
             elif action == "l":
