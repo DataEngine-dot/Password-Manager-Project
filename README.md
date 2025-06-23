@@ -67,7 +67,7 @@ pytest -v
 # Usage:
 Run the script:
 ```bash
-python main.py
+python src/main.py
 ```
 Then follow the CLI prompts to store or retrieve secrets.
 
