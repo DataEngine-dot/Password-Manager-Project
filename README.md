@@ -64,4 +64,29 @@ export PYTHONPATH=$(pwd)
 pytest -v
 ```
 
-# Usage
+# Usage:
+Run the script:
+```bash
+python main.py
+```
+Then follow the CLI prompts to store or retrieve secrets.
+
+# Example:
+```bash
+Please specify [e]ntry, [r]etrieval, [d]eletion, [l]isting or e[x]it:
+> l
+0 available
+Please specify [e]ntry, [r]etrieval, [d]eletion, [l]isting or e[x]it:
+> e
+Secret Identifier: Secret1
+UserId: testEmail
+Password: testPassword
+> Secret saved.
+Please specify [e]ntry, [r]etrieval, [d]eletion, [l]isting or e[x]it:
+> l
+1 available
+- Secret1
+Please specify [e]ntry, [r]etrieval, [d]eletion, [l]isting or e[x]it:
+> x
+Thank you. Goodbye.
+```
